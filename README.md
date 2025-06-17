@@ -19,9 +19,9 @@ C:\PathToBuildOutputDirectory\DirectoryScannerTool.exe
 
 | Argument                   | Description                                         | Example                                               |
 | -------------------------- | --------------------------------------------------- | ----------------------------------------------------- |
-| --summary-only             | Only display the summary (total files and size)     | DirectoryScannerTool.exe --summary-only               |
+| --summary-only             | Only display the summary (total files and size).    | DirectoryScannerTool.exe --summary-only               |
 | --output <filename.ext>    | Save results to the specified file.                 | DirectoryScannerTool.exe --output results.txt         |
-|  --extensions              | Add additional extensions to the list of currently  | DirectoryScannerTool.exe --extensions jpeg, tiff, wmv |    |                            | supported extensions.                               |                                                       |
+|  --extensions              | Add additional extensions to the supported list.    | DirectoryScannerTool.exe --extensions jpeg, tiff, wmv |                          
 
 You can also combine arguments:
 DirectoryScannerTool.exe --summary-only --output results.txt --extensions jpeg, tiff, wmv
