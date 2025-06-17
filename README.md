@@ -59,7 +59,7 @@ C:\Users\Artist\Folder With Spaces
 # Blank lines and lines with only whitespace are ignored
 
 ```
-If no command line arguments were provided you will be prompted with additional options. See section 4 for more information.
+If no command line arguments were provided you will be prompted with additional options. See section 5 for more information.
 
 ### 5. Options
 If no command line arguments were provided prior to launching the application, you will be prompted with the following options when scanning either a directory or a config file:
