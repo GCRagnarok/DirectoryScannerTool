@@ -39,7 +39,7 @@ Input a number between 1 – 3 to proceed.
 Selecting option 1 in the main menu will prompt you to provide the path to the directory you wish scan, i.e C:\Users\name\FolderToScan. 
 The provided path can be either relative or absolute. If the provided path is relative, please ensure the program is located in the same working directory you wish to scan.
 The tool will scan recursively, ensuring that any nested files within the directory will also be included in the scan.
-If no command line arguments were provided you will be prompted with additional options. See section 4 for more information.
+If no command line arguments were provided you will be prompted with additional options. See section 5 for more information.
 
 ### 4.2 Config File Scanner
 Selecting option 2 in the main menu will prompt you to provide the path to the config file you wish to scan. This config file can contain a list of directories for the application to scan.
