@@ -16,10 +16,14 @@ Launch the executable from the build output directory, or run from the command l
 C:\PathToBuildOutputDirectory\DirectoryScannerTool.exe
 
 ### 2.1 Command-Line Arguments
-Argument	Description	Example
---summary-only	Only display the summary (total files and size).	DirectoryScannerTool.exe --summary-only
---output <filename.ext>	Save results to the specified file.              	DirectoryScannerTool.exe --output results.txt
---extensions	Add additional extensions to the list of currently supported extensions.	DirectoryScannerTool.exe --extensions jpeg, tiff, wmv
+
+| Argument                   | Description                                         | Example                                               |
+| -------------------------- | --------------------------------------------------- | ----------------------------------------------------- |
+| --summary-only             | Only display the summary (total files and size)     | DirectoryScannerTool.exe --summary-only               |
+| -------------------------- | --------------------------------------------------- | ----------------------------------------------------- |
+| --output <filename.ext>    | Save results to the specified file.                 | DirectoryScannerTool.exe --output results.txt         |
+| -------------------------- | --------------------------------------------------- | ----------------------------------------------------- | 
+|  --extensions              | Add additional extensions to the list of currently  | DirectoryScannerTool.exe --extensions jpeg, tiff, wmv |   |                            | supported extensions.                               |                                                       |
 
 You can also combine arguments:
 DirectoryScannerTool.exe --summary-only --output results.txt --extensions jpeg, tiff, wmv
