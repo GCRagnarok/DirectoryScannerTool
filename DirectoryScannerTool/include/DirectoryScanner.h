@@ -47,6 +47,7 @@ private:
 	void PromptAndSetOutputFilename();
 	void PromptAndSetAdditionalExtensions();
 
+	void DisplayOutputPath();
 	void ParseAndAddExtensions();
 	bool HasValidExtension(const std::string& fileName);
 	void ScanDirectoryRecursive(const std::string& dirPath, std::vector<std::pair<std::string, uintmax_t>>& files);

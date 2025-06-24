@@ -114,25 +114,10 @@ void DirectoryScanner::ScanInputDirectory()
 	// Call function to scan the provided directory and return the output
 	ReturnOutput(dirPath);
 
-	// If an output filename is set, print the full path of the output file
+	// Call function to display the output path if an output filename is set
 	if (!m_OutputFilename.empty())
 	{
-		char fullPath[MAX_PATH];
-
-		if (GetFullPathNameA(m_OutputFilename.c_str(), MAX_PATH, fullPath, nullptr) > 0)
-		{
-			std::cout << "\nResults have been saved to file: " << fullPath << "\n";
-		}
-		else
-		{
-			std::cout << "\nResults have been saved to file: " << m_OutputFilename << "\n";
-		}
-
-		// Clear the output filename if output command was not used to reset for next scan
-		if (!m_OutputCommand)
-		{
-			m_OutputFilename.clear();
-		}
+		DisplayOutputPath();
 	}
 
 	std::cout << "\nReturning to the main menu...\n";
@@ -223,25 +208,10 @@ void DirectoryScanner::ScanConfigFile()
 		std::cout << "\nNo valid directories found in config file.\n";
 	}
 
-	// If an output filename is set, print the full path of the output file (print filename if GetFullPathName fails)
-	if (!m_OutputFilename.empty() && foundAny)
+	// Call function to display the output path if an output filename is set
+	if (!m_OutputFilename.empty())
 	{
-		char fullPath[MAX_PATH];
-
-		if (GetFullPathNameA(m_OutputFilename.c_str(), MAX_PATH, fullPath, nullptr) > 0)
-		{
-			std::cout << "\nResults have been saved to file: " << fullPath << "\n";
-		}
-		else
-		{
-			std::cout << "\nResults have been saved to file: " << m_OutputFilename << "\n";
-		}
-
-		// Clear the output filename to reset for next scan if output command was not used
-		if (!m_OutputCommand)
-		{
-			m_OutputFilename.clear();
-		}
+		DisplayOutputPath();
 	}
 
 	std::cout << "\nReturning to the main menu...\n";
@@ -341,8 +311,9 @@ void DirectoryScanner::Clean(int exitCode)
 	else
 	{
 		std::cout << "\nExiting due to an error (code " << exitCode << ")...\n";
-		exit(exitCode);
 	}
+
+	exit(exitCode);
 }
 
 //End of Core Functions ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -417,6 +388,27 @@ void DirectoryScanner::PromptAndSetAdditionalExtensions()
 		std::getline(std::cin >> std::ws, m_AdditionalExtensions);
 
 		ParseAndAddExtensions();
+	}
+}
+
+/// Display the output path of the results file
+void DirectoryScanner::DisplayOutputPath()
+{
+	char fullPath[MAX_PATH];
+
+	if (GetFullPathNameA(m_OutputFilename.c_str(), MAX_PATH, fullPath, nullptr) > 0)
+	{
+		std::cout << "\nResults have been saved to file: " << fullPath << "\n";
+	}
+	else
+	{
+		std::cout << "\nResults have been saved to file: " << m_OutputFilename << "\n";
+	}
+
+	// Clear the output filename if output command was not used to reset for next scan
+	if (!m_OutputCommand)
+	{
+		m_OutputFilename.clear();
 	}
 }
 
